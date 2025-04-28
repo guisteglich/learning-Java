@@ -1,9 +1,13 @@
+import java.util.logging.Logger;
+
 public class User {
 
     private String sPhoneNumber;
     private String sUserName;
     private int    nEventID;
     private Address address;
+
+    private static final Logger LOGGER = Logger.getLogger(User.class.getName());
 
     // Internal record (if only used by User)
     public record Address(
@@ -69,7 +73,7 @@ public class User {
     private int UpdateEventID() {
         this.nEventID +=1;
 
-        System.out.println("New Event. ID: " + this.nEventID);
+        LOGGER.info("New Event ID: " + this.nEventID);
 
         return this.nEventID;
     }
