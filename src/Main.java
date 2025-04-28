@@ -6,13 +6,13 @@ public class Main {
 
         User user1 = new User("Guilherme", "5199778");
         User.Address address = new User.Address(
-                "123 Java St", "Tech City", "CA", "12345", "USA"
+                "123 Java St", "Tech City", "RS", "12345", "BRA"
         );
 
         user1.AddOrUpdateAddr(address);
 
-        System.out.println(user1.UpdateNumber("51997786199"));
-        System.out.println(user1.UpdateName("Guilherme Steglich de Oliveira"));
+        System.out.println(user1.setPhoneNumber("51997786199"));
+        System.out.println(user1.setUserName("Guilherme Steglich de Oliveira"));
 
         System.out.println(user1.toString());
         }
