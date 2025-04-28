@@ -1,4 +1,5 @@
 import java.util.logging.Logger;
+import java.time.LocalDateTime;
 
 public class User {
 
@@ -6,6 +7,7 @@ public class User {
     private String sUserName;
     private int    nEventID;
     private Address address;
+    private final LocalDateTime creationDate;
 
     private static final Logger LOGGER = Logger.getLogger(User.class.getName());
 
@@ -31,6 +33,7 @@ public class User {
         this.sUserName    = sUserName;
         this.sPhoneNumber = sPhoneNumber;
         this.nEventID     = 0;
+        this.creationDate = LocalDateTime.now();
 
         System.out.println("User created: " + this.sUserName + " PhoneNumber: " + this.sPhoneNumber);
     }
@@ -67,7 +70,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User[name=" + this.sUserName + ", phone=" + this.sPhoneNumber + ", address=" + address + "]";
+        return "User[name=" + this.sUserName + " createdAt= " + this.creationDate + ", phone=" + this.sPhoneNumber + ", address=" + address + "]";
     }
 
     private int UpdateEventID() {
